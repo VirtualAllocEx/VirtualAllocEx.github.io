@@ -4,7 +4,7 @@ title: About Me
 ---
 
 <div align="center">
-    <img src ="/assets/workspace.png"/>
+    <img src ="/assets/?.png"/>
 </div>
 ...
 
