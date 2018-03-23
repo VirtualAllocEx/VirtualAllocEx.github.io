@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>{{ page.title }} - {{ site.title }}</title>
+
+   <link rel="stylesheet" type="text/css" href="{{ site.path }}/css/style.css" >
+
+</head>
+<body>
+
+		<div id="container">
+
+		<div id="header">
+
+				<nav style="">
+				    <ul class="main_menu">
+                        <li><a href="{{ site.baseurl }}/about">About</a></li>
+                    </ul>
+
+					<h1 id="logo"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+					<div id="logo-subline">{{ site.tagline }}</div>
+
+				</nav>
+
+		</div>
+
+			<div id="sidebar">
+
+                <nav>
+                    <h1>Posts</h1>
+                        <ul class="post_list">
+
+                            {% for post in site.posts %}
+                            <li>
+                                <h2>
+                                    <h7>
+                                    <time class="post_date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%y.%m.%d" }}</time>
+                                    </h7>
+
+                                    <div>
+                                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                                    </div>
+                                </h2>
+                            </li>
+                            {% endfor %}
+
+                        </ul>
+				</nav>
+
+			</div>
+
+			<div id="content_container">
+				<div id="content">
+
+                    {{ content }}
+
+				</div>
+
+				<footer id="page_footer">
+					<p>&copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. All rights reserved.</p>
+				</footer>
+
+			</div>
+		</div>
+
+</body>
+</html>
