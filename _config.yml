@@ -1,1 +1,24 @@
-theme: jekyll-theme-time-machine
+# Permalinks
+permalink:           pretty
+
+# Setup
+title:               My Blog
+tagline:             
+paginate:            1
+
+# Handling Reading
+
+sass:
+  sass_dir: css
+  style:    expanded
+
+exclude:
+- README.md
+
+# Conversion
+markdown: kramdown
+lsi: false
+
+# Gems
+gems:
+- jekyll-paginate
