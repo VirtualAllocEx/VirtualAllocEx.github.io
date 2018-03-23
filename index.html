@@ -1,3 +1,34 @@
+---
+layout: default
+title: Home
+---
 
+<div class="posts">
+    {% for post in paginator.posts %}
+    <article class="post">
+        <header class="post_header">
+            <time class="post_detail post_date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+            <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+        </header>
+        {{ post.content }}
+    </article>
+    {% endfor %}
 
-[next page](p1.md)
+    <footer class="post_footer">
+        <nav class="pagination">
+
+                {% if paginator.previous_page %}
+                <li class="pagination_prev">
+                    <a class="prev" title="{{page.previous.title}}" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Previous page</a>
+                </li>
+                {% endif %}
+
+                {% if paginator.next_page %}
+                <li class="pagination_next">
+                    <a class="next" title="{{page.next.title}}" href="{{ paginator.next_page_path | prepend: site.baseurl }}" >Next page</a>
+                </li>
+                {% endif %}
+
+        </nav>
+    </footer>
+</div>
